@@ -44,7 +44,6 @@ const fileReader = (file) => {
             frequencyMap[word] += 1
         })
         return frequencyMap
-
     } catch (error) {
         console.log(error)
     }
