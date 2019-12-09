@@ -22,6 +22,7 @@ const iterateDirectory = () => {
             filePathArray.forEach(filestring => {
                 let obj = {}
                 obj[filestring] = fileReader(path.join(`${directoryPath}/${filestring}`))
+              
                 arr.push(obj)
             })
         })
@@ -37,12 +38,13 @@ const fileReader = (file) => {
 
         const frequencyMap = {}
         words.forEach(w  => {
+            // console.log(w)
             if (!frequencyMap[w]) {
                 frequencyMap[w] = 0
             }
             frequencyMap[w] += 1
         })
-        
+        Object.keys(frequencyMap).forEach(key => frequencyMap[key] === undefined ? delete frequencyMap[key] : '')
         return frequencyMap
 
     } catch (error) {
@@ -51,7 +53,7 @@ const fileReader = (file) => {
   
 }
 
-
+// json_array.sort(function(a, b){return a.customer > b.customer? 1: -1;})
 
 // console.log(iterateDirectory())
 
