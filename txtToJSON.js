@@ -7,13 +7,12 @@ const stringifyArray = (result) => {
         if (err) throw err
     
         console.log('Successfully wrote file')
-
     })
 }
 
 
 const iterateDirectory = () => {
-    let arr = []
+    const arr = []
     const directoryPath = path.join(__dirname, 'wikipedia/Words')
     fs.readdir(directoryPath, function (err, files) {
         if (err) console.log('Unable to scan directory: ' + err)
@@ -46,14 +45,6 @@ const fileReader = (file) => {
         
         return frequencyMap
 
-    // Wiie
-    // const map = words.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map())
-
-    // let map = new Map([...new Set(words)].map(
-    //     x => [x, words.filter(y => y === x).length]
-    // ))
-    // console.log(map)
-
     } catch (error) {
         console.log(error)
     }
@@ -61,6 +52,9 @@ const fileReader = (file) => {
 }
 
 
+
 // console.log(iterateDirectory())
 
 iterateDirectory()
+
+
